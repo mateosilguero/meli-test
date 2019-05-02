@@ -1,0 +1,21 @@
+server:
+  image: node:8
+  command: npm start
+  working_dir: /app
+  volumes:
+    - ./server:/app
+  environment:
+    A: 1
+  ports:
+    - "4567:4567"
+
+frontend:
+  image: node:8
+  command: npm start
+  working_dir: /app
+  volumes:
+    - ./frontend:/app
+  ports:
+    - "3000:3000"
+  links:
+    - server
