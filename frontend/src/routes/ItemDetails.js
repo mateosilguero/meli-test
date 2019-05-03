@@ -1,13 +1,14 @@
 import React from 'react';
 import Navbar from '../components/navbar';
 import ItemDetail from '../components/itemDetail';
+import Categories from '../components/categories';
 import { getItem } from '../services/items';
 
 class ItemDetails extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			item: {}
+			item: null
 		}
 	}
 
@@ -23,7 +24,13 @@ class ItemDetails extends React.Component {
 		return (
 			<div>
 				<Navbar />
-				<ItemDetail item={item} />				
+				{
+					item &&
+					<Categories
+						categories={item.category}
+					/>
+				}
+				{ item && <ItemDetail item={item}/> }				
 			</div>
 		)
 	}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
@@ -33,10 +33,22 @@ const Button = styled.button`
     background: white;
     border: 1px solid lightgray;
     padding: 0 8px;
+    cursor: pointer;
 `;
 
 const Navbar = () => {
 	const [value, setValue] = useState('');
+	const handleKeypress = e => {
+	    if (e.keyCode === 13) {
+	    	value && window.location.replace(`/items?search=${value}`)
+	    }
+	};
+	useEffect(() => {
+	    document.addEventListener('keydown', handleKeypress, true);
+	    return () => {
+	    	document.removeEventListener('keydown', handleKeypress, true);
+	    };
+	});
 	return (		
 		<Bar>
 			<Container>

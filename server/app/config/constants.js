@@ -9,7 +9,8 @@ const defaultConfig = {
   apiPrefix: '/api',
   meliAPI: {
   	sites: 'https://api.mercadolibre.com/sites/MLA/search',
-  	item: 'https://api.mercadolibre.com/items'
+  	item: 'https://api.mercadolibre.com/items',
+    categories: 'https://api.mercadolibre.com/categories'
   },
   author: {
 	name: "Mateo",

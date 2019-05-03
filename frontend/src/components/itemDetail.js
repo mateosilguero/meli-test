@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	max-width: 850px;
-	margin: 16px auto;
+	margin: 0px auto;
+	margin-bottom: 16px;
 	padding: 16px;
 	background: white;
 	display: flex;
@@ -39,10 +40,12 @@ const Button = styled.button`
 	padding: 8px 16px;
 	font-size: 24px;
 	margin: 48px 0 8px 8px;
+	cursor: pointer;
 `;
 
 const conditions = {
-	new: 'Nuevo'
+	new: 'Nuevo',
+	used: 'Usado'
 }
 
 const ItemDetail = ({ item }) => {
